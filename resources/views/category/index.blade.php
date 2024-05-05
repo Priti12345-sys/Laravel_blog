@@ -30,7 +30,7 @@ Dashboard | Funda of Web IT
                 <td>
                     <div class="d-flex">
                         <button class="btn btn-primary">Edit</button>
-                        <button class="btn btn-secondary">Delete</button>
+                        <button class="btn btn-secondary">Silete</button>
                     </div>
                 </td>
             </tr>
