@@ -4,14 +4,23 @@
 
 @section('content')
     <h1>Edit Category</h1>
-    
+    <!-- Back Button -->
+    <a href="{{ route('category') }}" class="btn btn-secondary mb-3" style="
+  background-color: #199319;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 1rem;
+">Back</a>
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
 
-    <form action="{{ route('category.update', $item->id) }}" method="POST">
+    <form action="{{ route('category.update', $item->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         
@@ -30,6 +39,10 @@
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
+        <div class="mb-3">
+        <label for="image">Image</label>
+        <input type="file" name="image" id="image" class="form-control" accept="image/*" required>
+    </div>
 
         <button type="submit" class="btn btn-primary">Update</button>
     </form>

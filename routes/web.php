@@ -21,3 +21,4 @@ Route::post('/category/add', [CategoryController::class, 'store'])->name('catego
 Route::get('/role-edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
 Route::put('/role-edit/{id}', [CategoryController::class, 'update'])->name('category.update');
 Route::delete('/home/category/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
+// Route::get('category', 'CategoryController@index')->name('category.index');

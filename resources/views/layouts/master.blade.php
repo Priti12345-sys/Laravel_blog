@@ -32,19 +32,19 @@
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li>
+                    <!-- <li>
                         <a href="../examples/dashboard.html">
                             <i class="now-ui-icons design_app"></i>
                             <p>Dashboard</p>
                         </a>
-                    </li>
-                    <li>
+                    </li> -->
+                    <li class="{{ request()->path() == '/category' ? 'active' : '' }}" data-page-url="/category">
                         <a href="/home/category">
                             <i class="now-ui-icons education_atom"></i>
                             <p>Category</p>
                         </a>
-                    </li>
-                    <li>
+                     </li>
+                    <!-- <li>
                         <a href="../examples/map.html">
                             <i class="now-ui-icons location_map-big"></i>
                             <p>Maps</p>
@@ -79,7 +79,7 @@
                             <i class="now-ui-icons arrows-1_cloud-download-93"></i>
                             <p>Upgrade to PRO</p>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
