@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Dashboard | Funda of Web IT
+Dashboard | of Web IT
 @endsection
 
 @section('content')

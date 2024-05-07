@@ -29,8 +29,13 @@ Dashboard | Funda of Web IT
                 <td>{{$item->slug}}</td>
                 <td>
                     <div class="d-flex">
-                        <button class="btn btn-primary">Edit</button>
-                        <button class="btn btn-secondary">Silete</button>
+                    <a href="/role-edit/{{$item->id}}" class="btn btn-sucess">Edit</a>
+
+                    <form action="{{ route('category.delete', $item->id) }}" method="POST">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
                     </div>
                 </td>
             </tr>

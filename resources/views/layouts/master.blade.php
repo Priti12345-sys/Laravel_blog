@@ -39,9 +39,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../examples/icons.html">
+                        <a href="/home/category">
                             <i class="now-ui-icons education_atom"></i>
-                            <p>Icons</p>
+                            <p>Category</p>
                         </a>
                     </li>
                     <li>
