@@ -32,25 +32,31 @@
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <!-- <li>
-                        <a href="../examples/dashboard.html">
+                    <li>
+                        <a href="/home">
                             <i class="now-ui-icons design_app"></i>
                             <p>Dashboard</p>
                         </a>
-                    </li> -->
+                    </li>
                     <li class="{{ request()->path() == '/category' ? 'active' : '' }}" data-page-url="/category">
                         <a href="/home/category">
                             <i class="now-ui-icons education_atom"></i>
                             <p>Category</p>
                         </a>
                      </li>
-                    <!-- <li>
-                        <a href="../examples/map.html">
+                    <li>
+                        <a href="/blogpost">
                             <i class="now-ui-icons location_map-big"></i>
-                            <p>Maps</p>
+                            <p>BlogPost</p>
                         </a>
                     </li>
                     <li>
+                        <a href="/about">
+                            <i class="now-ui-icons location_map-big"></i>
+                            <p>Aboutus</p>
+                        </a>
+                    </li>
+                    <!-- <li>
                         <a href="../examples/notifications.html">
                             <i class="now-ui-icons ui-1_bell-53"></i>
                             <p>Notifications</p>

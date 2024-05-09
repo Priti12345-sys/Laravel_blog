@@ -6,20 +6,12 @@
 
 @section('content')
     <div class="row mt-5">
-        <a href="/home/category/add" class="btn btn-secondary mb-3" style="
-  background-color: #199319;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 16px;
-  margin-bottom: 1rem;
-">Add category</a>
         <div class="col-12">
             <h2> All category</h2>
+            <a href="/home/category/add" class="btn btn-secondary mb-3 float-right" style="background-color: #199319;">Add</a>
         </div>
         <div class="col-12">
-            <table class="table table-reponsive">
+            <table class="table table-responsive">
                 <thead>
                     <tr>
                         <th>SN</th>
@@ -36,12 +28,11 @@
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->slug }}</td>
                             <td>
-                               <img src="{{ asset($item->image)}}" style="width: 100px;" height="70px"; alt="Img"/>
+                                <img src="{{ asset($item->image) }}" style="width: 100px; height: 70px;" alt="Img">
                             </td>
                             <td>
                                 <div class="d-flex">
-                                    <a href="/role-edit/{{ $item->id }}" class="btn btn-sucess">Edit</a>
-
+                                    <a href="/role-edit/{{ $item->id }}" class="btn btn-success">Edit</a>
                                     <form action="{{ route('category.destroy', $item->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
@@ -53,7 +44,6 @@
                     @endforeach
                 </tbody>
             </table>
-
         </div>
     </div>
 @endsection

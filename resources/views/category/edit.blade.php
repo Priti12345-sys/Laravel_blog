@@ -2,7 +2,7 @@
 
 @section('title', 'Edit Category')
 
-@section('content')
+@section('content') <br> <br>
     <h1>Edit Category</h1>
     <!-- Back Button -->
     <a href="{{ route('category') }}" class="btn btn-secondary mb-3" style="
