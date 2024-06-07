@@ -15,6 +15,18 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @livewireStyles
+
+    <!-- jQuery and jQuery Raty -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-raty/2.8.0/jquery.raty.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-raty/2.8.0/jquery.raty.js"></script>
+    <head>
+    <!-- Other head content -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
 </head>
 <body>
     <div id="app">
@@ -75,6 +87,47 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <!-- Blog post content start -->
+        <div class="row">
+            <h2>Blog post</h2>
+            <div class="row">
+                @foreach ($blogposts as $item)
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ asset($item->image_url) }}" alt="Blog post img" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $item->title }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ $item->subtitle }}</h6>
+                            <p class="card-text">{{ \Illuminate\Support\Str::limit($item->content, 100) }}</p>
+                            <div class="d-flex justify-content-between">
+                    
+                                <livewire:like-button :initial-likes="$item->likes" />
+                                
+                                <a href="#" class="btn btn-primary">Comments</a>
+                                <a href="{{ route('blogpost.readMore', $item->id) }}" class="">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                @endforeach
+            </div>
+        </div>
     </div>
+
+    @livewireScripts
+
+    <script>
+        $(document).ready(function() {
+            $('.star-rating').raty({
+                score: 3, // default score, you can replace it with actual rating if available
+                click: function(score, evt) {
+                    alert('Rating: ' + score);
+                    // Here you can send the rating to your server via AJAX
+                }
+            });
+        });
+    </script>
 </body>
 </html>

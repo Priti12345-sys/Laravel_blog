@@ -74,16 +74,19 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Dakota Rice</td>
-                                    <td>Dakota Rice</td>
-                                    <td>Dakota Rice</td>
-                                    <td>Dakota Rice</td>
+                                    @foreach ($aboutus as $item )
+                                    <td>{{$item->id}}</td>
+                                    <td>{{$item->title}}</td>
+                                    <td>{{$item->sub-title}}</td>
+                                    <td>{{$item->description}}</td>
                                     <td>
                                         <a href="#" class="btn btn-success">Edit</a>
                                     </td>
                                     <td>
                                         <a href="#" class="btn btn-danger">Delete</a>
                                     </td>
+                                    @endforeach
+                                    
                                 </tr>
                             </tbody>
                         </table>
@@ -94,15 +97,6 @@
     </div>
 @endsection
 @section('scripts')
-    <script>
-        var addButton = document.getElementById('addButton');
-        addButton.onclick = function() {
-            showMessage('Add new about us');
-        }
-
-        function showMessage(message) {
-            alert(message);
-        }
-    </script>
+   
  
 @endsection

@@ -5,7 +5,7 @@
 @section('title', 'Add Blog Post')
 
 @section('content')
-    <div class="container">
+    <div class="container"> <br><br>
         <h1>Add Blog Post</h1>
 
         <form action="{{ route('blogpost.store') }}" method="POST">
@@ -20,12 +20,11 @@
                 <label for="subtitle">Subtitle</label>
                 <input type="text" id="subtitle" name="subtitle" class="form-control" required>
             </div>
-
-            <div class="form-group">
-                <label for="image">Image URL</label>
-                <input type="text" id="image" name="image" class="form-control" accept="image/*" required>
+            <div class="mb-3">
+            <label for="image">Image</label>
+            <input type="file" name="image" id="image" class="form-control" accept="image/*" required>
             </div>
-
+            
             <div class="form-group">
                 <label for="content">Content</label>
                 <textarea id="content" name="content" class="form-control" rows="6" required></textarea>

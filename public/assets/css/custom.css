@@ -1,0 +1,16 @@
+.navbar-nav .nav-item .nav-link {
+    color: #ffffff; /* Change text color */
+    padding: 10px 15px; /* Adjust padding */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #f96332; /* Change color on hover */
+}
+
+.navbar-toggler {
+    border: none; /* Remove border from the toggle button */
+}
+
+.navbar-toggler-bar {
+    background: #ffffff; /* Change color of toggle bars */
+}
