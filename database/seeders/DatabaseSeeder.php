@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+use App\Models\BlogPost;
 
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -13,11 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        // Seed users
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'phone' => '9861840689',
         ]);
+
+        // Seed blog posts
+        BlogPost::factory(10)->create();
     }
 }

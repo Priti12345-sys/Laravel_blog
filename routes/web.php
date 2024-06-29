@@ -37,6 +37,7 @@ Route::delete('/home/blogpost/{id}', [BlogPostController::class, 'destroy'])->na
 Route::get('/blogpost/edit/{id}', [BlogPostController::class, 'edit'])->name('blogpost.edit');
 
 
+
 // Route to read more about a blog post
 Route::get('blogpost/{id}/readMore', [BlogPostController::class, 'readMore'])->name('blogpost.readMore');
 
@@ -48,3 +49,6 @@ Route::post('/comments', [CommentController::class, 'store'])->name('comment.sto
 
 // Route to toggle visibility of blog post
 Route::post('/blogpost/toggleVisibility', [BlogPostController::class, 'toggleVisibility'])->name('blogpost.toggleVisibility');
+
+//Route for iamge
+Route::post('/upload', [BlogPostController::class, 'upload']);

@@ -21,10 +21,10 @@
                         @foreach ($blogposts as $item)
                             <div class="col-md-4 mb-4">
                                 <div class="card">
-                                    <img class="card-img-top" src="{{ asset('storage/' . $item->image_url) }}" alt="Blog post image" style="width: 100%; height: 200px; object-fit: cover;">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $item->title }}</h5>
                                         <h6 class="card-subtitle mb-2 text-muted">{{ $item->subtitle }}</h6>
+                                        <img src="{{$item->image_url}}" alt="" />
                                         <p class="card-text">{{ \Illuminate\Support\Str::limit($item->content, 100) }}</p>
                                         <div class="d-flex justify-content-between">
                                             <a href="{{ route('blogpost.edit', $item->id) }}">Edit</a>

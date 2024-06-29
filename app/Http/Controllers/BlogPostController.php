@@ -39,6 +39,7 @@ class BlogPostController extends Controller
 
         if($request->hasFile('image')){
             $imagepath = $request->file('image')->store('image');
+            dd($imagepath);
             $imageUrl = asset('storage/' .$imagepath);
         }
         else{
@@ -48,7 +49,7 @@ class BlogPostController extends Controller
         BlogPost::create([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
-            'image_url' => $request->image_url,
+            'image_url' => $imageUrl,
             'content' => $request->content
         ]);
         
@@ -77,6 +78,22 @@ class BlogPostController extends Controller
     
         return redirect()->route('blogpost.index')->with('status', 'Blog post visibility toggled successfully!');
     }
+    public function upload(Request $request)
+{
+    // Validate the uploaded file
+    $request->validate([
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation rules as needed
+    ]);
+
+    // Store the uploaded file in the storage/app/public directory
+    $imagePath = $request->file('image')->store('public');
+
+    // Get the public URL of the stored image
+    $imageUrl = asset('storage/' . $imagePath);
+
+    // Return the uploaded image URL or do further processing
+    return $imageUrl;
+}
     
 
 

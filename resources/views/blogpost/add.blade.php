@@ -8,7 +8,7 @@
     <div class="container"> <br><br>
         <h1>Add Blog Post</h1>
 
-        <form action="{{ route('blogpost.store') }}" method="POST">
+        <form action="{{ route('blogpost.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">
